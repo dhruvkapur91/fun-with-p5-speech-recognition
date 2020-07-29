@@ -8,7 +8,11 @@ function setup() {
 
   let languageCode = navigator.language || 'en-US';
   let speechRec = new p5.SpeechRec(languageCode, gotSpeech);
-  speechRec.start();
+
+  let continuous = true;
+  let interm = true;
+
+  speechRec.start(continuous, interm);
 
   function gotSpeech() {
     console.log("Started speaking");
